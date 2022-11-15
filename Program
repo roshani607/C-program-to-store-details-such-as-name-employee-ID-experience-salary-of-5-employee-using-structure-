@@ -1,0 +1,39 @@
+#include <stdio.h>
+struct employee {
+    char name[50];
+    int emp_id;
+    int experience;
+    float salary;
+} e[5];
+
+int main() {
+    int i;
+    printf("Enter information of employees:\n");
+
+    // for storing information of 5 employee
+    for (i = 0; i < 5; ++i) {
+        e[i].emp_id = i + 1;
+        printf("\nEmployee %d,\n", i+1);
+        printf("\nEnter name: ");
+        scanf("%s", &e[i].name);
+        printf("\nEnter employee ID: ");
+        scanf("%d", &e[i].emp_id);
+        printf("\nEnter employee's experience(*in years): ");
+        scanf("%d", &e[i].experience);
+        printf("\nEnter salary: ");
+        scanf("%f", &e[i].salary);
+    }
+    
+    printf("\n\n -----------Displaying Information:----------- \n\n");
+
+    // for displaying information of employee
+    for (i = 0; i < 5; ++i) {
+        printf("\nEmployee Id : %d", e[i].emp_id); //employee ID
+        printf("\nName of employee : ");  //employee name
+        puts(e[i].name);    
+        printf("Experience of employee is: %d years", e[i].experience); //employee experience
+        printf("\nSalary of employee : %.1f", e[i].salary); //employee salary
+        printf("\n\n");
+    }
+    return 0;
+}
